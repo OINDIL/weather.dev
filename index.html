@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather.dev TODO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <nav>
+        <p>Weather.<span>dev</span></p>
+        <div class="seach">
+            <input type="text" id="searchInput" placeholder="Enter city">
+            <button onclick="search()"><i class='bx bx-search'></i></button>
+        </div>
+        <div class="contact">
+            <ul>
+                <li>
+                    <a href="/"><i class='bx bxl-github'></i></a>
+                </li>
+                <li>
+                    <a href="/"><i class='bx bxl-instagram'></i></a>
+                </li>
+                <li><a href="/"><i class='bx bxl-linkedin-square'></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="bold-temp">
+            <div class="temp-image">
+                <h3 id="temp"></h3>
+                <img id="weather-image" src="" alt="">
+            </div>
+            <h2 id="location"></h2>
+            <div class="time-lat-lon">
+                <p id="date-time"></p>
+            </div>
+            <div class="lat-lon">
+                <p>Lat:<span id="latitude"></span></p>
+                <p>Lon:<span id="longitude"></span></p>
+            </div>
+        </div>
+        <aside>
+            <div class="wind">
+                <p>Wind</p>
+                <div class="wind-info">
+                    <p id="wind_mph"></p>
+                    <p id="wind_kph"></p>
+                    <p id="wind_degree"></p>
+                    <p id="wind-dir"></p>
+                </div>
+            </div>
+            <div class="aqi">
+                <p>AQI</p>
+                <div class="aqi-info">
+                    <p id="co"></p>
+                    <p id="no2"></p>
+                    <p id="o3"></p>
+                    <p id="so2"></p>
+                    <p id="pm2_5"></p>
+                    <p id="pm10"></p>
+                    <p id="us-epa-index"></p>
+                    <p id="gb-defra-index"></p>
+                </div>
+            </div>
+        </aside>
+    </section>
+</header>
+<script src="script.js"></script>
+</body>
+</html>

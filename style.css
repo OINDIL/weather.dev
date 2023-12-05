@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    height: 100vh;
+    padding: 20px 150px;
+}
+nav{
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+nav p span{
+    color: #59946c;
+}
+nav input{
+    border: 1px solid #80d39b;
+    transition: border-bottom 0.3s ease;
+    padding: 5px 5px;
+    border-radius: 15px;
+}
+nav input:hover{
+    border-bottom: 1px solid #59946c;
+}
+nav input:focus{
+    outline:none;
+    border-bottom: 2px solid #59946c;
+}
+nav button{
+    padding: 6px 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    background-color: #80d39b;
+    transition:all 0.3s ease;
+}
+nav button:hover{
+    cursor: pointer;
+    background-color: #59946c;
+    color: #fff;
+    border: 1px solid #59946c;
+}
+nav .contact ul{
+    display: flex;
+}
+nav ul li{
+    list-style-type: none;
+}
+nav ul li i{
+    color: #80d39b;
+    font-size: 1.5em;
+    margin-left: 4px;
+    transition: all 0.4s ease;
+}
+nav ul li i:hover{
+    color: #59946c;
+}
+.bold-temp{
+    background-color:brown;
+    display: flex;
+    flex-direction: column;justify-content: end;
+    /* background-color: aquamarine; */
+    padding: 30px;
+    width: 50%;
+}
+.bold-temp h3{
+    font-size: 5em;
+    font-weight: bolder;
+}
+.bold-temp .temp-image{
+    display: flex;
+    align-items: center;
+}
+#location{
+    font-size: 2em;
+}
+.lat-lon{
+    display: flex;
+}
+.lat-lon p:nth-child(2){
+    padding-left: 4px;
+}
+#latitude{
+    font-weight: 200;
+    padding-left:4px;
+    padding-right: 4px;
+    border-right: 2px solid black;
+}
+#longitude{
+    font-weight: 200;
+    padding-left: 4px;
+}
+section{
+    /* background-color: #59946c; */
+    display: flex;
+}
+aside{
+    width: 50%;
+    /* background-color: black; */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.aqi{
+    /* height: 200px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: bisque; */
+    backdrop-filter: blur(9px);
+    border-radius: 20px;
+    padding: 50px 0 50px 0;
+}
+.wind{
+    /* height: 200px; */
+    border-radius: 20px;
+    /* background-color: blue; */
+    backdrop-filter: blur(9px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+}
+.wind .wind-info{
+    display: flex;
+}
+.wind .wind-info p{
+    margin-right: 15px;
+}
+
+.aqi-info{
+    display: flex;
+}
+.aqi-info p{
+    margin-right: 15px;
+}
