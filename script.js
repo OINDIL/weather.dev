@@ -52,7 +52,7 @@ function displayFunc(obj) {
         const condition = 1000
         switch (condition) {
             case 1000:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/nick-nice-ve-R7PCjJDk-unsplash.jpg')";
                 break;
             case 1003:
                 document.body.style.backgroundImage = "url('path-to-image-1003.jpg')";
