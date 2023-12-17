@@ -127,76 +127,76 @@ function displayFunc(obj) {
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1201:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1201.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/heavy-rain.jpg')";
                 break;
             case 1204:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1204.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
                 break;
             case 1207:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1207.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
                 break;
             case 1210:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1210.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1213:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1213.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
                 break;
             case 1216:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1216.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
                 break;
             case 1219:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1219.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
                 break;
             case 1222:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1222.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1225:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1225.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/heavy-snow.jpg')";
                 break;
             case 1237:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1237.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1240:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1240.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1243:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1243.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1246:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1246.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1249:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1249.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1252:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1252.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1255:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1255.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1258:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1258.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1261:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1261.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1264:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1264.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1273:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1273.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/thunder.jpg')";
                 break;
             case 1276:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1276.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/thunder.jpg')";
                 break;
             case 1279:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1279.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
                 break;
             case 1282:
-                document.body.style.backgroundImage = "url('./weather images/sunny.jpg-1282.jpg')";
+                document.body.style.backgroundImage = "url('./weather images/heavy-snow.jpg')";
                 break;
             default:
-                document.body.style.backgroundImage = ""; // Default background image
+                document.body.style.backgroundImage = "url('./weather images/sunny.jpg')"; // Default background image
         }
 
     }
