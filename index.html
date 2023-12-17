@@ -1,114 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather.dev TODO</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <div id="background-image"></div>
-    <header>
-      <nav>
-        <p>Weather.<span>dev</span></p>
-        <div class="seach">
-          <input type="text" id="searchInput" placeholder="Enter city" />
-          <button onclick="search()"><i class="bx bx-search"></i></button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather.dev</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./icons/favicon.ico" type="image/x-icon">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="background-image"></div>
+  <header>
+    <nav>
+      <p>Weather.<span>dev</span></p>
+      <div class="seach">
+        <input type="text" id="searchInput" placeholder="Enter city" />
+        <button onclick="search()"><i class="bx bx-search"></i></button>
+      </div>
+      <div class="contact">
+        <ul>
+          <li>
+            <a href="/"><i class="bx bxl-github"></i></a>
+          </li>
+          <li>
+            <a href="/"><i class="bx bxl-instagram"></i></a>
+          </li>
+          <li>
+            <a href="/"><i class="bx bxl-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section>
+      <div class="bold-temp">
+        <div class="temp-image">
+          <h3 id="temp"></h3>
+          <img id="weather-image" src="" alt="" />
         </div>
-        <div class="contact">
-          <ul>
-            <li>
-              <a href="/"><i class="bx bxl-github"></i></a>
-            </li>
-            <li>
-              <a href="/"><i class="bx bxl-instagram"></i></a>
-            </li>
-            <li>
-              <a href="/"><i class="bx bxl-linkedin-square"></i></a>
-            </li>
-          </ul>
+        <h2 id="location"></h2>
+        <div class="time-lat-lon">
+          <p id="date-time"></p>
         </div>
-      </nav>
-      <section>
-        <div class="bold-temp">
-          <div class="temp-image">
-            <h3 id="temp"></h3>
-            <img id="weather-image" src="" alt="" />
-          </div>
-          <h2 id="location"></h2>
-          <div class="time-lat-lon">
-            <p id="date-time"></p>
-          </div>
-          <div class="lat-lon">
-            <p>Lat:<span id="latitude"></span></p>
-            <p>Lon:<span id="longitude"></span></p>
-          </div>
+        <div class="lat-lon">
+          <p>Lat:<span id="latitude"></span></p>
+          <p>Lon:<span id="longitude"></span></p>
         </div>
-        <aside>
-          <div class="wind">
-            <p>Wind</p>
-            <div class="wind-info">
-                <div class="p-h6 border-right">
-                    <p id="wind_mph"></p>
-                    <h6>mph</h6>
-                </div>
-                <div class="p-h6 border-right">
-                    <p id="wind_kph"></p>
-                    <h6>kph</h6>
-                </div>
-                <div class="p-h6 border-right">
-                    <p id="wind_degree"></p>
-                    <h6>🧭</h6>
-                </div>
-                <div class="p-h6 border-right">
-                    <p id="wind-dir"></p>
-                    <h6>direction</h6>
-                </div>
+      </div>
+      <aside>
+        <div class="wind">
+          <p>Wind</p>
+          <div class="wind-info">
+            <div class="p-h6 border-right">
+              <p id="wind_mph"></p>
+              <h6>mph</h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="wind_kph"></p>
+              <h6>kph</h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="wind_degree"></p>
+              <h6>🧭</h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="wind-dir"></p>
+              <h6>direction</h6>
             </div>
           </div>
-          <div class="aqi">
-            <p>AQI</p>
-            <div class="aqi-info">
-              <div class="p-h6 border-right">
-                <p id="co"></p>
-                <h6>CO</h6>
-              </div>
-              <div class="p-h6 border-right">
-                <p id="no2"></p>
-                <h6>NO<sub>2</sub></h6>
-              </div>
-              <div class="p-h6 border-right">
-                <p id="o3"></p>
-                <h6>O<sub>3</sub></h6>
-              </div>
-              <div class="p-h6 border-right">
-                <p id="so2"></p>
-                <h6>SO<sub>2</sub></h6>
-              </div>
-              <div class="p-h6 border-right">
-                <p id="pm2_5"></p>
-                <h6>PM2.5</h6>
-              </div>
-              <div class="p-h6">
-                <p id="pm10"></p>
-                <h6>PM10</h6>
-              </div>
+        </div>
+        <div class="aqi">
+          <p>AQI</p>
+          <div class="aqi-info">
+            <div class="p-h6 border-right">
+              <p id="co"></p>
+              <h6>CO</h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="no2"></p>
+              <h6>NO<sub>2</sub></h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="o3"></p>
+              <h6>O<sub>3</sub></h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="so2"></p>
+              <h6>SO<sub>2</sub></h6>
+            </div>
+            <div class="p-h6 border-right">
+              <p id="pm2_5"></p>
+              <h6>PM2.5</h6>
+            </div>
+            <div class="p-h6">
+              <p id="pm10"></p>
+              <h6>PM10</h6>
             </div>
           </div>
-        </aside>
-      </section>
-    </header>
-    <script src="script.js"></script>
-  </body>
+        </div>
+      </aside>
+    </section>
+  </header>
+  <script src="script.js"></script>
+</body>
+
 </html>

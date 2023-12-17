@@ -2,7 +2,7 @@
 
 const fetchData = async (searchTerm) => {
     try {
-        const data = await fetch(`http://api.weatherapi.com/v1/current.json?key= 0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&aqi=yes`)
+        const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&aqi=yes`)
         const obj = await data.json()
         return obj
     } catch (error) {
@@ -10,7 +10,6 @@ const fetchData = async (searchTerm) => {
     }
 
 }
-// funcAPI("http://api.weatherapi.com/v1/current.json?key= 0a337fa6b9e14e5ca66170347231406&q=bongaon&aqi=yes")
 //Search button
 const search = async () => {
     const searchInput = document.getElementById("searchInput")
@@ -49,13 +48,22 @@ function displayFunc(obj) {
         document.getElementById("pm10").innerHTML = obj.current.air_quality.pm10
         // switch case for background image
         const condition = obj.current.condition.code
+        let boldTemp = document.querySelector(".bold-temp")
+        let wind = document.querySelector(".wind")
+        let aqi = document.querySelector(".aqi")
         console.log(condition)
         switch (condition) {
             case 1000:
                 document.body.style.backgroundImage = "url('./weather images/sunny.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1003:
                 document.body.style.backgroundImage = "url('./weather images/partly-cloudy.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1006:
                 document.body.style.backgroundImage = "url('./weather images/cloudy.jpg')";
@@ -65,27 +73,45 @@ function displayFunc(obj) {
                 break;
             case 1030:
                 document.body.style.backgroundImage = "url('./weather images/mist.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1063:
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1066:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1069:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1072:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1087:
                 document.body.style.backgroundImage = "url('./weather images/thunder.jpg')";
                 break;
             case 1114:
                 document.body.style.backgroundImage = "url('./weather images/blowing-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1117:
                 document.body.style.backgroundImage = "url('./weather images/blizzard.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1135:
                 document.body.style.backgroundImage = "url('./weather images/fog.jpg')";
@@ -98,12 +124,21 @@ function displayFunc(obj) {
                 break;
             case 1153:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1168:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1171:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1180:
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
@@ -119,42 +154,75 @@ function displayFunc(obj) {
                 break;
             case 1192:
                 document.body.style.backgroundImage = "url('./weather images/heavy-rain.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1195:
                 document.body.style.backgroundImage = "url('./weather images/heavy-rain.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1198:
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
                 break;
             case 1201:
                 document.body.style.backgroundImage = "url('./weather images/heavy-rain.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1204:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1207:
                 document.body.style.backgroundImage = "url('./weather images/patchy-sleet.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1210:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1213:
                 document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1216:
                 document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1219:
                 document.body.style.backgroundImage = "url('./weather images/light-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1222:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1225:
                 document.body.style.backgroundImage = "url('./weather images/heavy-snow.jpg')";
                 break;
             case 1237:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1240:
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
@@ -167,21 +235,39 @@ function displayFunc(obj) {
                 break;
             case 1249:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1252:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1255:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1258:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1261:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1264:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1273:
                 document.body.style.backgroundImage = "url('./weather images/thunder.jpg')";
@@ -191,13 +277,18 @@ function displayFunc(obj) {
                 break;
             case 1279:
                 document.body.style.backgroundImage = "url('./weather images/patchy-snow.jpg')";
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
                 break;
             case 1282:
                 document.body.style.backgroundImage = "url('./weather images/heavy-snow.jpg')";
                 break;
             default:
                 document.body.style.backgroundImage = "url('./weather images/sunny.jpg')"; // Default background image
+                boldTemp.style.color = "black"
+                wind.style.color = "black"
+                aqi.style.color = "black"
         }
-
     }
 }
