@@ -1,5 +1,5 @@
-// connect API
 
+// connect API
 const fetchData = async (searchTerm) => {
     try {
         const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&aqi=yes`)
@@ -10,6 +10,43 @@ const fetchData = async (searchTerm) => {
     }
 
 }
+
+
+// navigator and geolocation api
+
+//? success callback
+const successCallback = (position) =>{
+    const {latitude, longitude} = position.coords
+    getCity(latitude,longitude)
+    console.log(latitude,longitude)
+}
+//! error callback
+const errorCallback = (error) =>{
+    alert(error + "Location not found , enter manually!")
+}
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+
+const getCity = (lat,long) =>{
+    let xhr = new XMLHttpRequest()
+
+    xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.9fecabfbfee1ff5449e7df36ff844226&lat=" + lat + "&lon=" + long + "&format=json", true)
+    xhr.send(); 
+    xhr.onreadystatechange = processRequest; 
+    xhr.addEventListener("readystatechange", processRequest, false); 
+
+    function processRequest(e) { 
+        if (xhr.readyState == 4 && xhr.status == 200) { 
+            var response = JSON.parse(xhr.responseText); 
+            // console.log(response);
+            var city = response.address.county;
+            return; 
+        }
+     } 
+}
+
+
+
 //Search button
 const search = async () => {
     const searchInput = document.getElementById("searchInput")
@@ -30,10 +67,11 @@ function displayFunc(obj) {
     }
     else {
         const weatherImage = document.getElementById("weather-image");
-        document.getElementById("temp").innerHTML = obj.current.temp_c
+        document.getElementById("temp").innerHTML = Math.ceil(obj.current.temp_c)
         weatherImage.src = obj.current.condition.icon
         document.getElementById("location").innerHTML = obj.location.name
         document.getElementById("date-time").innerHTML = obj.location.localtime
+        document.getElementById("weather-name").innerHTML = obj.current.condition.text
         document.getElementById("latitude").innerHTML = obj.location.lat
         document.getElementById("longitude").innerHTML = obj.location.lon
         document.getElementById("wind_mph").innerHTML = obj.current.wind_mph
@@ -52,6 +90,8 @@ function displayFunc(obj) {
         let wind = document.querySelector(".wind")
         let aqi = document.querySelector(".aqi")
         // console.log(condition)
+
+
         switch (condition) {
             case 1000:
                 document.body.style.backgroundImage = "url('./weather images/sunny.jpg')";

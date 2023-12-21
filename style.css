@@ -89,8 +89,20 @@ nav ul li i:hover{
     font-weight: 300;
     font-size: 2em;
 }
+.bold-temp #weather-name{
+    font-size: 1.5em;
+    font-weight:bold;
+}
 #location{
-    font-size: 2em;
+    font-size: 1.4em;
+}
+.bold-temp .location-icon{
+    display: flex;
+    align-items: center;
+}
+.bold-temp .weather-image-name{
+    display: flex;
+    align-items: center;
 }
 .lat-lon{
     display: flex;
