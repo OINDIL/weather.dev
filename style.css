@@ -24,12 +24,12 @@ nav p span{
 }
 nav input{
     border: 1px solid #80d39b;
-    transition: border-bottom 0.3s ease;
+    transition: all 0.3s ease;
     padding: 5px 5px;
     border-radius: 15px;
 }
 nav input:hover{
-    border-bottom: 1px solid #59946c;
+    border: 1px solid #59946c;
 }
 nav input:focus{
     outline:none;
@@ -122,7 +122,6 @@ aside{
 }
 
 .aqi{
-    color: #fff;
     /* height: 200px; */
     display: flex;
     flex-direction: column;
@@ -133,7 +132,6 @@ aside{
     padding: 50px 0 50px 0;
 }
 .wind{
-    color: #fff;
     /* height: 200px; */
     border-radius: 20px;
     /* background-color: aliceblue; */

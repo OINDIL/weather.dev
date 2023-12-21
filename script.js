@@ -51,7 +51,7 @@ function displayFunc(obj) {
         let boldTemp = document.querySelector(".bold-temp")
         let wind = document.querySelector(".wind")
         let aqi = document.querySelector(".aqi")
-        console.log(condition)
+        // console.log(condition)
         switch (condition) {
             case 1000:
                 document.body.style.backgroundImage = "url('./weather images/sunny.jpg')";
