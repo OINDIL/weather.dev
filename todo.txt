@@ -1,5 +1,7 @@
 1. Search animation - whenever search results show up it should come up with animation.
 2. adding the 5 day forecast bar at the bottom.
-3. geolocation - working on it.//
+3. geolocation - done
+4. hide api key
+5. on first start-up use the default location
 
 api = pk.9fecabfbfee1ff5449e7df36ff844226

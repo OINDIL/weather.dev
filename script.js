@@ -18,7 +18,7 @@ const fetchData = async (searchTerm) => {
 const successCallback = (position) =>{
     const {latitude, longitude} = position.coords
     getCity(latitude,longitude)
-    console.log(latitude,longitude)
+    // console.log(latitude,longitude)
 }
 //! error callback
 const errorCallback = (error) =>{
@@ -35,11 +35,13 @@ const getCity = (lat,long) =>{
     xhr.onreadystatechange = processRequest; 
     xhr.addEventListener("readystatechange", processRequest, false); 
 
-    function processRequest(e) { 
+    async function processRequest(e) { 
         if (xhr.readyState == 4 && xhr.status == 200) { 
             var response = JSON.parse(xhr.responseText); 
             // console.log(response);
             var city = response.address.county;
+            const data = await fetchData(city)
+            displayFunc(data)
             return; 
         }
      } 
