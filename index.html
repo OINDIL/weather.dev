@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet" />
-  <script src="script.js" defer></script>
+  
 </head>
 
 <body>
@@ -20,7 +20,6 @@
     <nav>
       <p>Weather.<span>dev</span></p>
       <div class="seach">
-        <!-- <button type="button" onclick="getCity()"><i class='bx bx-current-location'></i></button> -->
         <input type="text" id="searchInput" placeholder="Enter city" />
         <button onclick="search()"><i class="bx bx-search"></i></button>
       </div>
@@ -33,7 +32,8 @@
             <a href="https://www.instagram.com/oindil.golder/" target="_blank"><i class="bx bxl-instagram"></i></a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/oindil-golder/" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="https://www.linkedin.com/in/oindil-golder/" target="_blank"><i
+                class="bx bxl-linkedin-square"></i></a>
           </li>
         </ul>
       </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="p-h6 border-right">
               <p id="wind_degree"></p>
-              <h6>🧭</h6>
+              <h6><i class='bx bx-compass'></i></h6>
             </div>
             <div class="p-h6">
               <p id="wind-dir"></p>
@@ -112,7 +112,21 @@
         </div>
       </aside>
     </section>
+    <!-- forecast tab -->
+    <!--
+    <section class="forecast-section">
+      <main id="main-2">
+        <div class="heading">
+          <p>How's the day?</p>
+        </div>
+        <div id="forcasts">
+
+        </div>
+      </main>
+    </section>
+    -->
   </header>
+  <script src="script.js"></script>
 </body>
 
 </html>

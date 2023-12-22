@@ -2,7 +2,7 @@
 // connect API
 const fetchData = async (searchTerm) => {
     try {
-        const data = await fetch(`http://api.weatherapi.com/v1/current.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&aqi=yes`)
+        const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&days=1&aqi=yes&alerts=no`)
         const obj = await data.json()
         return obj
     } catch (error) {
@@ -22,33 +22,22 @@ const successCallback = (position) =>{
 }
 //! error callback
 const errorCallback = (error) =>{
+
     alert(error + "Location not found , enter manually!")
 }
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
-const getCity = (lat,long) =>{
-    let xhr = new XMLHttpRequest()
-
-    xhr.open('GET', `https://us1.locationiq.com/v1/reverse.php?key=pk.9fecabfbfee1ff5449e7df36ff844226&lat=${lat}&lon=${long}&format=json`, true)
-    xhr.send(); 
-    xhr.onreadystatechange = processRequest; 
-    xhr.addEventListener("readystatechange", processRequest, false); 
-
-    async function processRequest(e) { 
-        if (xhr.readyState == 4 && xhr.status == 200) { 
-            var response = JSON.parse(xhr.responseText); 
-            // console.log(response);
-            var city = response.address.county;
-            const data = await fetchData(city)
-            displayFunc(data)
-            return; 
-        }
-     } 
+const getCity = async (lat,long) =>{
+    try {
+        const data = await fetch(`https://us1.locationiq.com/v1/reverse?key=pk.9fecabfbfee1ff5449e7df36ff844226&lat=${lat}&lon=${long}&format=json`)
+        const obj = await data.json()
+        const fetchedData = await fetchData(obj.address.county)
+        displayFunc(fetchedData)
+    } catch (error) {
+        alert(error + " Location not found , enter manually!")
+    }
 }
-
-
-
 //Search button
 const search = async () => {
     const searchInput = document.getElementById("searchInput")
@@ -86,6 +75,8 @@ function displayFunc(obj) {
         document.getElementById("so2").innerHTML = obj.current.air_quality.so2
         document.getElementById("pm2_5").innerHTML = obj.current.air_quality.pm2_5
         document.getElementById("pm10").innerHTML = obj.current.air_quality.pm10
+        //! creating the forecast for the hourly forecast
+        
         // switch case for background image
         const condition = obj.current.condition.code
         let boldTemp = document.querySelector(".bold-temp")

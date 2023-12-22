@@ -5,6 +5,7 @@
     font-family: 'Poppins',sans-serif;
 }
 body{
+    background-image: url(./weather\ images/fog.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,7 +13,7 @@ body{
 }
 header{
     height: 100vh;
-    padding: 20px 150px;
+    padding: 20px 130px;
 }
 nav{
     /* background-color: aquamarine; */
@@ -177,10 +178,22 @@ aside{
 .p-h6 h6{
     font-weight: 200;
 }
-
+.forecast-section{
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+}
+.forecast-section #main-2{
+    display: flex;
+}
+.forecast-section .forcasts .weather-time{
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+}
 @media(max-width:786px) {
     header{
-        padding: 20px;
+        padding: 10px;
     }
     section{
         flex-direction: column;
