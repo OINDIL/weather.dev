@@ -30,7 +30,7 @@ navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 const getCity = (lat,long) =>{
     let xhr = new XMLHttpRequest()
 
-    xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.9fecabfbfee1ff5449e7df36ff844226&lat=" + lat + "&lon=" + long + "&format=json", true)
+    xhr.open('GET', `https://us1.locationiq.com/v1/reverse.php?key=pk.9fecabfbfee1ff5449e7df36ff844226&lat=${lat}&lon=${long}&format=json`, true)
     xhr.send(); 
     xhr.onreadystatechange = processRequest; 
     xhr.addEventListener("readystatechange", processRequest, false); 
@@ -91,7 +91,7 @@ function displayFunc(obj) {
         let boldTemp = document.querySelector(".bold-temp")
         let wind = document.querySelector(".wind")
         let aqi = document.querySelector(".aqi")
-        // console.log(condition)
+        console.log(condition)
 
 
         switch (condition) {
@@ -112,12 +112,12 @@ function displayFunc(obj) {
                 break;
             case 1009:
                 document.body.style.backgroundImage = "url('./weather images/overcast.jpg')";
+                boldTemp.style.color = "white"
+                wind.style.color = "white"
+                aqi.style.color = "white"
                 break;
             case 1030:
                 document.body.style.backgroundImage = "url('./weather images/mist.jpg')";
-                boldTemp.style.color = "black"
-                wind.style.color = "black"
-                aqi.style.color = "black"
                 break;
             case 1063:
                 document.body.style.backgroundImage = "url('./weather images/patchy-rain.jpg')";
