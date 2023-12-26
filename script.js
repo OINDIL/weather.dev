@@ -8,7 +8,6 @@ const fetchData = async (searchTerm) => {
     } catch (error) {
         console.error("Error fetching data:", error);
     }
-
 }
 
 
@@ -60,32 +59,48 @@ function displayFunc(obj) {
         const weatherImage = document.getElementById("weather-image");
         document.getElementById("temp").innerHTML = Math.ceil(obj.current.temp_c)
         weatherImage.src = obj.current.condition.icon
-        document.getElementById("location").innerHTML = obj.location.name
-        document.getElementById("date-time").innerHTML = obj.location.localtime
-        document.getElementById("weather-name").innerHTML = obj.current.condition.text
-        document.getElementById("latitude").innerHTML = obj.location.lat
-        document.getElementById("longitude").innerHTML = obj.location.lon
-        document.getElementById("wind_mph").innerHTML = obj.current.wind_mph
-        document.getElementById("wind_kph").innerHTML = obj.current.wind_kph
-        document.getElementById("wind_degree").innerHTML = obj.current.wind_degree
-        document.getElementById("wind-dir").innerHTML = obj.current.wind_dir
-        document.getElementById("co").innerHTML = obj.current.air_quality.co
-        document.getElementById("no2").innerHTML = obj.current.air_quality.no2
-        document.getElementById("o3").innerHTML = obj.current.air_quality.o3
-        document.getElementById("so2").innerHTML = obj.current.air_quality.so2
-        document.getElementById("pm2_5").innerHTML = obj.current.air_quality.pm2_5
-        document.getElementById("pm10").innerHTML = obj.current.air_quality.pm10
+        // destructuring the object
+        const { name,localtime,lat,lon } = obj.location
+        const { wind_mph, wind_kph,wind_degree,wind_dir } = obj.current
+        const { text } = obj.current.condition
+        const { co,no2,o3,so2,pm2_5,pm10 } = obj.current.air_quality
+        //
+        //! creating 'how's the day' from api response
+
+        const howTheDay = obj.forecast.forecastday[0].hour
+        howTheDay.forEach(data => {
+            const markup = `<li>${data.time}</li>`
+            console.log(data);
+            document.getElementById('forcasts').querySelector('ul').insertAdjacentHTML('beforeend',markup)
+        })
+
+        //!
+
+        document.getElementById("location").innerHTML = name
+        document.getElementById("date-time").innerHTML = localtime
+        document.getElementById("weather-name").innerHTML = text
+        document.getElementById("latitude").innerHTML = lat
+        document.getElementById("longitude").innerHTML = lon
+        document.getElementById("wind_mph").innerHTML = wind_mph
+        document.getElementById("wind_kph").innerHTML = wind_kph
+        document.getElementById("wind_degree").innerHTML = wind_degree
+        document.getElementById("wind-dir").innerHTML = wind_dir
+        document.getElementById("co").innerHTML = co
+        document.getElementById("no2").innerHTML = no2
+        document.getElementById("o3").innerHTML = o3
+        document.getElementById("so2").innerHTML = so2
+        document.getElementById("pm2_5").innerHTML = pm2_5
+        document.getElementById("pm10").innerHTML = pm10
         //! creating the forecast for the hourly forecast
         
         // switch case for background image
-        const condition = obj.current.condition.code
+        const conditionCode = obj.current.condition.code
         let boldTemp = document.querySelector(".bold-temp")
         let wind = document.querySelector(".wind")
         let aqi = document.querySelector(".aqi")
-        console.log(condition)
 
 
-        switch (condition) {
+        switch (conditionCode) {
             case 1000:
                 document.body.style.backgroundImage = "url('./weather images/sunny.jpg')";
                 boldTemp.style.color = "black"
