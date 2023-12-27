@@ -192,8 +192,6 @@ aside{
     border-radius: 20px;
 }
 .forecast-section #main-2{
-    /* background-color: #80d39b; */
-    overflow-x: auto;
     padding: 20px;
 }
 .forecast-section .heading p{
@@ -226,6 +224,9 @@ aside{
     }
     .bold-temp .temp-image{
         flex-direction: column;
+    }
+    .aqi{
+        margin-top: 15px;
     }
     .wind,.aqi{
         padding: 20px;

@@ -6,7 +6,7 @@ const fetchData = async (searchTerm) => {
         const obj = await data.json()
         return obj
     } catch (error) {
-        console.error("Error fetching data:", error);
+        alert("Error fetching data:");
     }
 }
 
@@ -22,7 +22,7 @@ const successCallback = (position) =>{
 //! error callback
 const errorCallback = (error) =>{
 
-    alert(error + "Location not found , enter manually!")
+    alert("Location not found , enter manually!")
 }
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
@@ -34,7 +34,7 @@ const getCity = async (lat,long) =>{
         const fetchedData = await fetchData(obj.address.county)
         displayFunc(fetchedData)
     } catch (error) {
-        alert(error + " Location not found , enter manually!")
+        alert(" Location not found , enter manually!")
     }
 }
 //Search button
@@ -50,6 +50,12 @@ const search = async () => {
         alert("Please enter a valid city/village")
     }
 }
+// const howTheDay = await fetchData().forecast.forecastday[0].hour
+//         howTheDay.forEach(data => {
+//             const markup = `<li>${Math.ceil(data.temp_c)}℃</li>`
+//             console.log(data);
+//             document.getElementById('forcasts').querySelector('ul').insertAdjacentHTML('beforeend',markup)
+// })
 //displaying results
 function displayFunc(obj) {
     if (obj.error) {
@@ -67,12 +73,7 @@ function displayFunc(obj) {
         //
         //! creating 'how's the day' from api response
 
-        const howTheDay = obj.forecast.forecastday[0].hour
-        howTheDay.forEach(data => {
-            const markup = `<li>${data.temp_c}</li>`
-            console.log(data);
-            document.getElementById('forcasts').querySelector('ul').insertAdjacentHTML('beforeend',markup)
-        })
+        
 
         //!
 
@@ -91,7 +92,6 @@ function displayFunc(obj) {
         document.getElementById("so2").innerHTML = so2
         document.getElementById("pm2_5").innerHTML = pm2_5
         document.getElementById("pm10").innerHTML = pm10
-        //! creating the forecast for the hourly forecast
         
         // switch case for background image
         const conditionCode = obj.current.condition.code
