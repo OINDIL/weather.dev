@@ -69,7 +69,7 @@ function displayFunc(obj) {
 
         const howTheDay = obj.forecast.forecastday[0].hour
         howTheDay.forEach(data => {
-            const markup = `<li>${data.time}</li>`
+            const markup = `<li>${data.temp_c}</li>`
             console.log(data);
             document.getElementById('forcasts').querySelector('ul').insertAdjacentHTML('beforeend',markup)
         })

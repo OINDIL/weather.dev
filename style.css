@@ -207,6 +207,7 @@ aside{
 }
 .forecast-section #forcasts ul{
     display: flex;
+    justify-content: center;
 }
 @media(max-width:786px) {
     header{
