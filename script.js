@@ -2,7 +2,7 @@
 // connect API
 const fetchData = async (searchTerm) => {
     try {
-        const data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&days=1&aqi=yes&alerts=no`)
+        const data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=0a337fa6b9e14e5ca66170347231406&q=${searchTerm}&days=1&aqi=yes&alerts=no`)
         const obj = await data.json()
         return obj
     } catch (error) {
