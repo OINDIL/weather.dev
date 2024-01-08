@@ -20,36 +20,36 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 7vh;
 }
 nav p span{
-    color: #59946c;
+    color: black;
 }
 nav input{
-    border: 1px solid #80d39b;
+    border: 1px solid black;
     transition: all 0.3s ease;
     padding: 5px 5px;
     border-radius: 15px;
 }
 nav input:hover{
-    border: 1px solid #59946c;
+    border: 1px solid #595f94;
 }
 nav input:focus{
     outline:none;
-    border-bottom: 2px solid #59946c;
+    border: 1px solid #595f94;
 }
 nav button{
     padding: 6px 10px;
     border-radius: 15px;
     border: 1px solid transparent;
-    background-color: #80d39b;
+    background-color: #8790de;
     transition:all 0.3s ease;
 }
 nav button:hover{
     cursor: pointer;
-    background-color: #59946c;
+    background-color: #595f94;
     color: #fff;
-    border: 1px solid #59946c;
+    /* border: 1px solid black; */
 }
 nav .contact ul{
     display: flex;
@@ -58,13 +58,13 @@ nav ul li{
     list-style-type: none;
 }
 nav ul li i{
-    color: #80d39b;
+    color: rgb(69, 68, 68);
     font-size: 1.5em;
     margin-left: 4px;
     transition: all 0.4s ease;
 }
 nav ul li i:hover{
-    color: #59946c;
+    color: black;
 }
 .bold-temp{
     display: flex;
@@ -230,5 +230,24 @@ aside{
     }
     .wind,.aqi{
         padding: 20px;
+    }
+}
+@media(max-width:480px){
+    nav{
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(6px);
+        justify-content: center;
+        width: 100%;
+        /* background-color: #fff; */
+    }
+    nav p{
+        display: none;
+    }
+    nav .contact{
+        display: none;
+    }
+    section{
+        height: 110vh;
     }
 }
